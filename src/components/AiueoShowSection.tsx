@@ -8,9 +8,9 @@ type Props = {
 
 export const AiueoShowSection: FC<Props> = ({ aiueo }) => {
   return (
-    <Stack spacing="4">
+    <Stack spacing="4" bg="white" p="4">
       {Object.keys(aiueo).map((key) => (
-        <Text key={key}>{`${key}：${aiueo[key]}`}</Text>
+        <Text fontWeight="bold" key={key}>{`${key}：${aiueo[key]}`}</Text>
       ))}
     </Stack>
   );
