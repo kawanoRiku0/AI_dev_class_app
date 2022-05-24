@@ -33,13 +33,14 @@ const Home: NextPage = () => {
 
   // データをレンダリングする
   return (
-    <Box w="full" minH="100vh" bg="blackAlpha.100">
+    <Box w="full" minH="100vh" bg="blackAlpha.50">
       <Center>
         <Stack mt="16" w="2xl" spacing="8">
           <Heading>あいうえお作文メーカー</Heading>
           <Stack>
             <Text>お好きな文字を入力してください</Text>
             <Input
+              bg="white"
               borderColor="blackAlpha.500"
               value={text}
               onChange={(e) => setText(e.target.value)}
