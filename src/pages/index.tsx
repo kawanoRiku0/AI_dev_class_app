@@ -1,4 +1,12 @@
-import { Box, Button, Center, Heading, Input, Text } from "@chakra-ui/react";
+import {
+  Box,
+  Button,
+  Center,
+  Heading,
+  Input,
+  Stack,
+  Text,
+} from "@chakra-ui/react";
 import type { NextPage } from "next";
 import { Dispatch, SetStateAction, useState } from "react";
 import useSWR from "swr";
@@ -25,20 +33,31 @@ const Home: NextPage = () => {
 
   // データをレンダリングする
   return (
-    <Box w="full">
+    <Box w="full" minH="100vh" bg="blackAlpha.50">
       <Center>
-        <Box mt="16" w="2xl">
+        <Stack mt="16" w="2xl" spacing="8">
           <Heading>あいうえお作文メーカー</Heading>
-          <Box>
+          <Stack>
             <Text>お好きな文字を入力してください</Text>
-            <Input value={text} onChange={(e) => setText(e.target.value)} />
-            <Button onClick={() => handleOnClick(text, setKeyWard)}>
+            <Input
+              bg="white"
+              borderColor="blackAlpha.500"
+              value={text}
+              onChange={(e) => setText(e.target.value)}
+              _hover={{ opacity: "1.0" }}
+            />
+            <Button
+              bg="blue.900"
+              color="white"
+              onClick={() => handleOnClick(text, setKeyWard)}
+              _hover={{ opacity: "0.8" }}
+            >
               作成！
             </Button>
-          </Box>
+          </Stack>
 
           {data && <AiueoShowSection aiueo={data.result} />}
-        </Box>
+        </Stack>
       </Center>
     </Box>
   );
